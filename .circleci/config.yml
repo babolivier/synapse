@@ -7,7 +7,7 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 18.09.3
-      - docker_prepare:
+      - docker_prepare
       - run: docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
       - docker_build:
           parameters: --label gitsha1=${CIRCLE_SHA1} -t matrixdotorg/synapse:${CIRCLE_TAG} -t matrixdotorg/synapse:${CIRCLE_TAG}-py3
@@ -19,7 +19,7 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 18.09.3
-      - docker_prepare:
+      - docker_prepare
       - run: docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
       - docker_build:
           parameters: --label gitsha1=${CIRCLE_SHA1} -t matrixdotorg/synapse:latest -t matrixdotorg/synapse:latest-py3
