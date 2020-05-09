@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   dockerhubuploadrelease:
     docker:
@@ -25,7 +25,7 @@ jobs:
           parameters: --label gitsha1=${CIRCLE_SHA1} -t matrixdotorg/synapse:latest -t matrixdotorg/synapse:latest-py3
 
 workflows:
-  version: 2
+  version: 2.1
   build:
     jobs:
       - dockerhubuploadrelease:
